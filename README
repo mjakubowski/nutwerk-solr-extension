@@ -1,0 +1,24 @@
+Solr Extension for Silex
+========================
+
+This extension sets up the solr client the connect to a solr instance
+
+
+Installation
+------------
+
+cd /path/to/silex_project/vendor
+git clone git@github.com:mjakubowski/nutwerk-solr-extension.git
+
+Clone solr-php-client-curl Repository:
+git clone git://github.com/andreisavu/solr-php-client-curl.git
+
+Edit your index.php:
+
+$app['autoloader']->registerNamespace('Nutwerk', __DIR__.'/vendor/nutwerk-solr-extension/lib');
+$app->register(new Nutwerk\Extension\SolrExtension(), array(
+    'solr.host'       => 'localhost',
+    'solr.port'       => 8180,
+    'solr.path'       => '/solr/',
+    'solr.class_path' => __DIR__.'/vendor/solr-php-client-curl',
+));
