@@ -1,10 +1,10 @@
 <?php
-namespace Nutwerk\Extension;
+namespace Nutwerk\Provider;
 
 use Silex\Application;
-use Silex\ExtensionInterface;
+use Silex\ServiceProviderInterface;
 
-class SolrExtension implements ExtensionInterface
+class SolrServiceProvider implements ServiceProviderInterface
 {
     public function register(Application $app)
     {
